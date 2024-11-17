@@ -3,7 +3,7 @@
 { config, pkgs, ... }:
 
 {
-	home.stateVersion = "24.05";
+	home.stateVersion = "24.11";
 
 	home = {
 		username = "dylan";
@@ -57,10 +57,10 @@
 		shellAliases = {
 			g = "git";
 			l = "eza -lah --sort=name --color=always --icons --group-directories-first";
-			dupdate = "darwin-rebuild switch --flake $HOME/.config/nix";
+			dupdate = "darwin-rebuild switch --flake $HOME/.config/nix-config";
 			t = "tmux";
 			proj = "cd $HOME/Documents/Projects";
-			nc = "$EDITOR $HOME/.config/nix";
+			nc = "$EDITOR $HOME/.config/nix-config";
 		};
 		plugins = [
 			{
