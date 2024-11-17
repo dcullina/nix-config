@@ -57,10 +57,10 @@
 		shellAliases = {
 			g = "git";
 			l = "eza -lah --sort=name --color=always --icons --group-directories-first";
-			ls = "l";
 			dupdate = "darwin-rebuild switch --flake $HOME/.config/nix";
 			t = "tmux";
-			proj = "cd $HOME/Projects";
+			proj = "cd $HOME/Documents/Projects";
+			nc = "$EDITOR $HOME/.config/nix";
 		};
 		plugins = [
 			{
