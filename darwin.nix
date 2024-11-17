@@ -33,6 +33,5 @@
 
 	environment.variables = {
 		EDITOR = "vim";
-		SHELL = "/bin/zsh";
 	};
 }

@@ -3,7 +3,7 @@
 { config, pkgs, ... }:
 
 {
-	home.stateVersion = "24.11";
+	home.stateVersion = "24.05";
 
 	home = {
 		username = "dylan";
@@ -60,6 +60,7 @@
 			ls = "l";
 			dupdate = "darwin-rebuild switch --flake $HOME/.config/nix";
 			t = "tmux";
+			proj = "cd $HOME/Projects";
 		};
 		plugins = [
 			{
