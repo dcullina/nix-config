@@ -4,9 +4,10 @@
 
 {
 	environment.systemPackages = [
+		pkgs.cmake
 		pkgs.ripgrep
-			pkgs.fzf
-			pkgs.gh
+		pkgs.fzf
+		pkgs.gh
 	];
 
 	fonts.packages = [
@@ -32,6 +33,6 @@
 	programs.bash.enable = false;
 
 	environment.variables = {
-		EDITOR = "vim";
+		EDITOR = "nvim";
 	};
 }

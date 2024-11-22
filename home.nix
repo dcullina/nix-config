@@ -17,9 +17,11 @@
 	};
 
 	home.packages = with pkgs; [
+		btop
 		eza
 		starship
 		tmux
+		tree
 		yazi
 	];
 
@@ -29,6 +31,9 @@
 
 	programs.starship = {
 		enable = true;
+		settings = {
+			command_timeout = 10000;
+		};
 	};
 
 	programs.tmux = {
@@ -43,8 +48,10 @@
 		enable = true;
 		enableZshIntegration = true;
 		settings = {
-			show_hidden = true;
-			sort_dir_first = true;
+			manager = {
+				show_hidden = true;
+				sort_dir_first = true;
+			};
 		};
 		shellWrapperName = "y";
 	};
@@ -59,8 +66,11 @@
 			l = "eza -lah --sort=name --color=always --icons --group-directories-first";
 			dupdate = "darwin-rebuild switch --flake $HOME/.config/nix-config";
 			t = "tmux";
+			vim = "nvim";
+			v = "nvim";
 			proj = "cd $HOME/Documents/Projects";
 			nc = "$EDITOR $HOME/.config/nix-config";
+			nd = "nix develop -c $SHELL";
 		};
 		plugins = [
 			{
@@ -75,6 +85,10 @@
 		completionInit = ''
 		autoload -U compinit && compinit
 		zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+		'';
+		profileExtra = ''
+			eval "$(/opt/homebrew/bin/brew shellenv)"	
+			export PATH="'$(brew --prefix)'/opt/python/libexec/bin:$PATH"
 		'';
 	};
 
