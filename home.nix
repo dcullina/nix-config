@@ -17,6 +17,7 @@
 	};
 
 	home.packages = with pkgs; [
+		bat
 		btop
 		eza
 		starship
@@ -89,6 +90,9 @@
 		profileExtra = ''
 			eval "$(/opt/homebrew/bin/brew shellenv)"	
 			export PATH="'$(brew --prefix)'/opt/python/libexec/bin:$PATH"
+		'';
+		envExtra = ''
+			. "$HOME/.cargo/env"
 		'';
 	};
 
